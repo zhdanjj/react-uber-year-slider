@@ -1,22 +1,56 @@
-.App {
-  text-align: center;
+body {
+  --transition-time: .8s;
 }
 
-.App-logo {
-  height: 40vmin;
+.slider {
+  overflow: hidden;
+  max-width: 1320px;
+  margin: 40px auto 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.track {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  transition: all var(--transition-time);
+  will-change: transform;
 }
 
-.App-link {
-  color: #09d3ac;
+.item {
+  cursor: pointer;
+  font-size: 78px;
+  font-weight: bold;
+  transition: all var(--transition-time);
+  will-change: transform;
+  user-select: none;
+}
+
+.item:hover {
+  opacity: 1 !important;
+}
+
+.controls {
+  display: flex;
+  margin-top: 40px;
+  border: 1px solid;
+}
+
+.btn {
+  width: 50%;
+  text-align: center;
+  font-size: 78px;
+  cursor: pointer;
+  transition: background var(--transition-time), color var(--transition-time);
+  user-select: none;
+}
+
+.btn:hover {
+  background: #000;
+  color: #fff;
+}
+
+.btn:active {
+  transform: scale(.98);
+}
+
+.btn + .btn {
+  border-left: inherit;
 }
